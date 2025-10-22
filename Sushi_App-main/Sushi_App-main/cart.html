@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng - Sushi Master</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2><i class="fas fa-fish"></i> Sushi Master</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Trang Chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="menu.html" class="nav-link">Thực Đơn</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">Giới Thiệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Liên Hệ</a>
+                    </li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="cart.html" class="cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <a href="login.html" class="login-btn">Đăng Nhập</a>
+                    <a href="register.html" class="register-btn">Đăng Ký</a>
+                </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Cart Hero -->
+    <section class="cart-hero">
+        <div class="container">
+            <h1>Giỏ Hàng</h1>
+            <p>Kiểm tra và thanh toán đơn hàng của bạn</p>
+        </div>
+    </section>
+
+    <!-- Cart Content -->
+    <section class="cart-content">
+        <div class="container">
+            <div class="cart-layout">
+                <!-- Cart Items -->
+                <div class="cart-items">
+                    <div class="cart-header">
+                        <h2>Sản Phẩm Trong Giỏ</h2>
+                        <div class="cart-actions">
+                            <button onclick="forceRefreshCart()" class="btn btn-secondary" style="margin-right: 10px;">
+                                <i class="fas fa-sync-alt"></i> Làm Mới
+                            </button>
+                            <button class="clear-cart-btn" id="clearCart">
+                                <i class="fas fa-trash"></i> Xóa Tất Cả
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="cart-list" id="cartList">
+                        <!-- Cart items will be populated by JavaScript -->
+                    </div>
+                    
+                    <div class="cart-empty" id="cartEmpty" style="display: none;">
+                        <div class="empty-content">
+                            <i class="fas fa-shopping-cart"></i>
+                            <h3>Giỏ hàng trống</h3>
+                            <p>Bạn chưa có sản phẩm nào trong giỏ hàng</p>
+                            <a href="menu.html" class="btn btn-primary">Tiếp Tục Mua Sắm</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cart Summary -->
+                <div class="cart-summary">
+                    <div class="summary-card">
+                        <h3>Tổng Kết Đơn Hàng</h3>
+                        
+                        <div class="summary-row">
+                            <span>Tạm tính:</span>
+                            <span id="subtotal">0đ</span>
+                        </div>
+                        
+                        <div class="summary-row">
+                            <span>Phí vận chuyển:</span>
+                            <span id="shipping">30,000đ</span>
+                        </div>
+                        
+                        <div class="summary-row">
+                            <span>Thuế (10%):</span>
+                            <span id="tax">0đ</span>
+                        </div>
+                        
+                        <div class="summary-row total">
+                            <span>Tổng cộng:</span>
+                            <span id="total">0đ</span>
+                        </div>
+                        
+                        <button class="btn btn-primary checkout-btn" id="checkoutBtn">
+                            <i class="fas fa-credit-card"></i> Thanh Toán
+                        </button>
+                        
+                        <div class="payment-methods">
+                            <h4>Phương thức thanh toán:</h4>
+                            <div class="payment-options">
+                                <div class="payment-option">
+                                    <input type="radio" id="cod" name="payment" value="cod" checked>
+                                    <label for="cod">
+                                        <i class="fas fa-money-bill-wave"></i>
+                                        Thanh toán khi nhận hàng
+                                    </label>
+                                </div>
+                                <div class="payment-option">
+                                    <input type="radio" id="bank" name="payment" value="bank">
+                                    <label for="bank">
+                                        <i class="fas fa-university"></i>
+                                        Chuyển khoản ngân hàng
+                                    </label>
+                                </div>
+                                <div class="payment-option">
+                                    <input type="radio" id="momo" name="payment" value="momo">
+                                    <label for="momo">
+                                        <i class="fas fa-mobile-alt"></i>
+                                        Ví điện tử MoMo
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checkout Modal -->
+    <div class="checkout-modal" id="checkoutModal">
+        <div class="modal-overlay">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Thông Tin Đặt Hàng</h3>
+                    <span class="modal-close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <form id="checkoutForm">
+                        <div class="form-group">
+                            <label for="customerName">Họ và tên *</label>
+                            <input type="text" id="customerName" name="customerName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="customerPhone">Số điện thoại *</label>
+                            <input type="tel" id="customerPhone" name="customerPhone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="customerEmail">Email</label>
+                            <input type="email" id="customerEmail" name="customerEmail">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="deliveryAddress">Địa chỉ giao hàng *</label>
+                            <textarea id="deliveryAddress" name="deliveryAddress" rows="3" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="deliveryTime">Thời gian giao hàng</label>
+                            <select id="deliveryTime" name="deliveryTime">
+                                <option value="asap">Giao ngay (30-45 phút)</option>
+                                <option value="1hour">Sau 1 giờ</option>
+                                <option value="2hours">Sau 2 giờ</option>
+                                <option value="tomorrow">Ngày mai</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="notes">Ghi chú</label>
+                            <textarea id="notes" name="notes" rows="2" placeholder="Ghi chú thêm cho đơn hàng..."></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary" id="cancelCheckout">Hủy</button>
+                            <button type="submit" class="btn btn-primary">Xác Nhận Đặt Hàng</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-fish"></i> Sushi Master</h3>
+                    <p>Nhà hàng sushi hàng đầu với hương vị truyền thống Nhật Bản</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Liên Kết</h4>
+                    <ul>
+                        <li><a href="index.html">Trang Chủ</a></li>
+                        <li><a href="menu.html">Thực Đơn</a></li>
+                        <li><a href="about.html">Giới Thiệu</a></li>
+                        <li><a href="contact.html">Liên Hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Thông Tin</h4>
+                    <ul>
+                        <li><a href="history.html">Lịch Sử Đơn Hàng</a></li>
+                        <li><a href="login.html">Đăng Nhập</a></li>
+                        <li><a href="register.html">Đăng Ký</a></li>
+                        <li><a href="cart.html">Giỏ Hàng</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Liên Hệ</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Đường ABC, Quận 1, TP.HCM</p>
+                        <p><i class="fas fa-phone"></i> 0123 456 789</p>
+                        <p><i class="fas fa-envelope"></i> info@sushimaster.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sushi Master. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/cart.js"></script>
+</body>
+</html>
