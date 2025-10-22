@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ - Sushi Master</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2><i class="fas fa-fish"></i> Sushi Master</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Trang Chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="menu.html" class="nav-link">Thực Đơn</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">Giới Thiệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link active">Liên Hệ</a>
+                    </li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="cart.html" class="cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <a href="login.html" class="login-btn">Đăng Nhập</a>
+                    <a href="register.html" class="register-btn">Đăng Ký</a>
+                </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Liên Hệ Với Chúng Tôi</h1>
+            <p>Chúng tôi luôn sẵn sàng phục vụ và lắng nghe ý kiến của bạn</p>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="contact-content">
+        <div class="container">
+            <div class="contact-layout">
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <div class="form-card">
+                        <h2>Gửi Tin Nhắn</h2>
+                        <p>Hãy để lại thông tin và chúng tôi sẽ liên hệ lại với bạn sớm nhất</p>
+                        
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">Họ *</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Tên *</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Số điện thoại *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Chủ đề *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Chọn chủ đề</option>
+                                    <option value="reservation">Đặt bàn</option>
+                                    <option value="delivery">Giao hàng</option>
+                                    <option value="feedback">Phản hồi</option>
+                                    <option value="complaint">Khiếu nại</option>
+                                    <option value="partnership">Hợp tác</option>
+                                    <option value="other">Khác</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Tin nhắn *</label>
+                                <textarea id="message" name="message" rows="5" required placeholder="Hãy mô tả chi tiết yêu cầu của bạn..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary submit-btn">
+                                <span class="btn-text">Gửi Tin Nhắn</span>
+                                <div class="loading" style="display: none;"></div>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info-section">
+                    <div class="info-card">
+                        <h2>Thông Tin Liên Hệ</h2>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Địa Chỉ</h3>
+                                <p>123 Đường ABC, Phường 1<br>Quận 1, TP. Hồ Chí Minh</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Điện Thoại</h3>
+                                <p>0123 456 789<br>0987 654 321</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Email</h3>
+                                <p>info@sushimaster.com<br>reservation@sushimaster.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Giờ Mở Cửa</h3>
+                                <p>Thứ 2 - Chủ Nhật<br>11:00 - 22:00</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Map -->
+                    <div class="map-card">
+                        <h3>Vị Trí Nhà Hàng</h3>
+                        <div class="map-container">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.3253156357477!2d106.70042331533284!3d10.7763703923204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f4b90b68bd3%3A0x4b0b3e5b3b3b3b3b!2sDistrict%201%2C%20Ho%20Chi%20Minh%20City!5e0!3m2!1sen!2s!4v1634567890123!5m2!1sen!2s" 
+                                width="100%" 
+                                height="300" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Câu Hỏi Thường Gặp</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Làm thế nào để đặt bàn?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Bạn có thể đặt bàn bằng cách gọi điện trực tiếp đến số 0123 456 789 hoặc sử dụng form liên hệ trên trang web. Chúng tôi khuyến khích đặt bàn trước ít nhất 1 giờ.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Nhà hàng có giao hàng không?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Có, chúng tôi cung cấp dịch vụ giao hàng trong bán kính 10km. Phí giao hàng là 30,000đ. Thời gian giao hàng từ 30-45 phút tùy thuộc vào vị trí.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Nhà hàng có phục vụ món chay không?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Có, chúng tôi có menu riêng cho khách hàng ăn chay với các món sushi chay được chế biến từ rau củ tươi ngon và các nguyên liệu thực vật.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Nhà hàng có bãi đỗ xe không?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Có, chúng tôi có bãi đỗ xe miễn phí cho khách hàng với sức chứa 20 xe ô tô và 50 xe máy.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Nhà hàng có phục vụ tiệc cưới không?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Có, chúng tôi cung cấp dịch vụ tiệc cưới và sự kiện với menu đặc biệt. Vui lòng liên hệ trước ít nhất 1 tuần để chúng tôi chuẩn bị tốt nhất.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-fish"></i> Sushi Master</h3>
+                    <p>Nhà hàng sushi hàng đầu với hương vị truyền thống Nhật Bản</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Liên Kết</h4>
+                    <ul>
+                        <li><a href="index.html">Trang Chủ</a></li>
+                        <li><a href="menu.html">Thực Đơn</a></li>
+                        <li><a href="about.html">Giới Thiệu</a></li>
+                        <li><a href="contact.html">Liên Hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Thông Tin</h4>
+                    <ul>
+                        <li><a href="history.html">Lịch Sử Đơn Hàng</a></li>
+                        <li><a href="login.html">Đăng Nhập</a></li>
+                        <li><a href="register.html">Đăng Ký</a></li>
+                        <li><a href="cart.html">Giỏ Hàng</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Liên Hệ</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Đường ABC, Quận 1, TP.HCM</p>
+                        <p><i class="fas fa-phone"></i> 0123 456 789</p>
+                        <p><i class="fas fa-envelope"></i> info@sushimaster.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sushi Master. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>

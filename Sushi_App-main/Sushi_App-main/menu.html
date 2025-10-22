@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực Đơn - Sushi Master</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2><i class="fas fa-fish"></i> Sushi Master</h2>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Trang Chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="menu.html" class="nav-link active">Thực Đơn</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">Giới Thiệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="nav-link">Liên Hệ</a>
+                    </li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="cart.html" class="cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <a href="login.html" class="login-btn">Đăng Nhập</a>
+                    <a href="register.html" class="register-btn">Đăng Ký</a>
+                </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Menu Hero -->
+    <section class="menu-hero">
+        <div class="container">
+            <h1>Thực Đơn Sushi</h1>
+            <p>Khám phá hương vị truyền thống Nhật Bản</p>
+        </div>
+    </section>
+
+    <!-- Menu Filter -->
+    <section class="menu-filter">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Tất Cả</button>
+                <button class="filter-btn" data-filter="sushi">Sushi</button>
+                <button class="filter-btn" data-filter="sashimi">Sashimi</button>
+                <button class="filter-btn" data-filter="maki">Maki</button>
+                <button class="filter-btn" data-filter="roll">Roll</button>
+            </div>
+            <div class="search-box">
+                <input type="text" id="menu-search" placeholder="Tìm kiếm món ăn...">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Content -->
+    <section class="menu-content">
+        <div class="container">
+            <!-- Sushi Category -->
+            <div class="menu-category" data-category="sushi">
+                <h2 class="category-title">Sushi Truyền Thống</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-product="1">
+                        <div class="menu-image">
+                            <img src="images/sushi-1.jpg" alt="Sushi Set A">
+                        </div>
+                        <div class="menu-info">
+                            <h3>Sushi Set A</h3>
+                            <p>Bộ sushi truyền thống với 8 miếng</p>
+                            <div class="menu-price">299,000đ</div>
+                            <button class="btn btn-primary add-to-cart" data-id="1">Thêm Vào Giỏ</button>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-product="5">
+                        <div class="menu-image">
+                            <img src="images/sushi-5.jpg" alt="Nigiri Sushi">
+                        </div>
+                        <div class="menu-info">
+                            <h3>Nigiri Sushi</h3>
+                            <p>Sushi cá hồi tươi ngon</p>
+                            <div class="menu-price">249,000đ</div>
+                            <button class="btn btn-primary add-to-cart" data-id="5">Thêm Vào Giỏ</button>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-product="6">
+                        <div class="menu-image">
+                            <img src="images/sushi-6.jpg" alt="Chirashi Bowl">
+                        </div>
+                        <div class="menu-info">
+                            <h3>Chirashi Bowl</h3>
+                            <p>Cơm sushi với nhiều loại cá</p>
+                            <div class="menu-price">199,000đ</div>
+                            <button class="btn btn-primary add-to-cart" data-id="6">Thêm Vào Giỏ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sashimi Category -->
+            <div class="menu-category" data-category="sashimi">
+                <h2 class="category-title">Sashimi</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-product="2">
+                        <div class="menu-image">
+                            <img src="images/sushi-2.jpg" alt="Sashimi Premium">
+                        </div>
+                        <div class="menu-info">
+                            <h3>Sashimi Premium</h3>
+                            <p>Cá hồi tươi ngon nhập khẩu</p>
+                            <div class="menu-price">399,000đ</div>
+                            <button class="btn btn-primary add-to-cart" data-id="2">Thêm Vào Giỏ</button>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-product="7">
+                        <div class="menu-image">
+                            <img src="images/sushi-7.jpg" alt="Tuna Sashimi">
+                        </div>
+                        <div class="menu-info">
+                            <h3>Tuna Sashimi</h3>
+                            <p>Cá ngừ tươi cắt lát</p>
+                            <div class="menu-price">349,000đ</div>
+                            <button class="btn btn-primary add-to-cart" data-id="7">Thêm Vào Giỏ</button>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-product="8">
+                        <div class="menu-image">
+                            <img src="images/sushi-8.jpg" alt="Mixed Sashimi">
+                        </div>
+                        <div class="menu-info">
+                            <h3>Mixed Sashimi</h3>
+                            <p>Đĩa sashimi hỗn hợp</p>
+                            <div class="menu-price">449,000đ</div>
+                            <button class="btn btn-primary add-to-cart" data-id="8">Thêm Vào Giỏ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Maki Category -->
+            <div class="menu-category" data-category="maki">
+                <h2 class="category-title">Maki Roll</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-product="3">
+                        <div class="menu-image">
+                            <img src="images/sushi-3.jpg" alt="Maki Roll">
+                        </div>
+                        <div class="menu-info">
+                            <h3>Maki Roll</h3>
+                            <p>Cuộn sushi với tôm và bơ</p>
+                            <div class="menu-price">199,000đ</div>
+                            <button class="btn btn-primary add-to-cart" data-id="3">Thêm Vào Giỏ</button>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-product="9">
+                        <div class="menu-image">
+                            <img src="images/sushi-9.jpg" alt="California Roll">
+                        </div>
+                        <div class="menu-info">
+                            <h3>California Roll</h3>
+                            <p>Cuộn California với cua và bơ</p>
+                            <div class="menu-price">179,000đ</div>
+                            <button class="btn btn-primary add-to-cart" data-id="9">Thêm Vào Giỏ</button>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-product="10">
+                        <div class="menu-image">
+                            <img src="images/sushi-10.jpg" alt="Spicy Tuna Roll">
+                        </div>
+                        <div class="menu-info">
+                            <h3>Spicy Tuna Roll</h3>
+                            <p>Cuộn cá ngừ cay</p>
+                            <div class="menu-price">219,000đ</div>
+                            <button class="btn btn-primary add-to-cart" data-id="10">Thêm Vào Giỏ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Special Roll Category -->
+            <div class="menu-category" data-category="roll">
+                <h2 class="category-title">Special Roll</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-product="4">
+                        <div class="menu-image">
+                            <img src="images/sushi-4.jpg" alt="Dragon Roll">
+                        </div>
+                        <div class="menu-info">
+                            <h3>Dragon Roll</h3>
+                            <p>Cuộn rồng với tôm tempura</p>
+                            <div class="menu-price">349,000đ</div>
+                            <button class="btn btn-primary add-to-cart" data-id="4">Thêm Vào Giỏ</button>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-product="11">
+                        <div class="menu-image">
+                            <img src="images/sushi-11.jpg" alt="Rainbow Roll">
+                        </div>
+                        <div class="menu-info">
+                            <h3>Rainbow Roll</h3>
+                            <p>Cuộn cầu vồng với nhiều loại cá</p>
+                            <div class="menu-price">379,000đ</div>
+                            <button class="btn btn-primary add-to-cart" data-id="11">Thêm Vào Giỏ</button>
+                        </div>
+                    </div>
+
+                    <div class="menu-item" data-product="12">
+                        <div class="menu-image">
+                            <img src="images/sushi-12.jpg" alt="Volcano Roll">
+                        </div>
+                        <div class="menu-info">
+                            <h3>Volcano Roll</h3>
+                            <p>Cuộn núi lửa với sốt cay</p>
+                            <div class="menu-price">329,000đ</div>
+                            <button class="btn btn-primary add-to-cart" data-id="12">Thêm Vào Giỏ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-fish"></i> Sushi Master</h3>
+                    <p>Nhà hàng sushi hàng đầu với hương vị truyền thống Nhật Bản</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Liên Kết</h4>
+                    <ul>
+                        <li><a href="index.html">Trang Chủ</a></li>
+                        <li><a href="menu.html">Thực Đơn</a></li>
+                        <li><a href="about.html">Giới Thiệu</a></li>
+                        <li><a href="contact.html">Liên Hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Thông Tin</h4>
+                    <ul>
+                        <li><a href="history.html">Lịch Sử Đơn Hàng</a></li>
+                        <li><a href="login.html">Đăng Nhập</a></li>
+                        <li><a href="register.html">Đăng Ký</a></li>
+                        <li><a href="cart.html">Giỏ Hàng</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Liên Hệ</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Đường ABC, Quận 1, TP.HCM</p>
+                        <p><i class="fas fa-phone"></i> 0123 456 789</p>
+                        <p><i class="fas fa-envelope"></i> info@sushimaster.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sushi Master. Tất cả quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/menu.js"></script>
+</body>
+</html>
